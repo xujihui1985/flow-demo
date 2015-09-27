@@ -1,0 +1,16 @@
+[ignore]
+.*/node_modules/.*/node_modules/.*
+.*/node_modules/babel-core/.*
+.*/node_modules/babel-loader/.*
+.*/node_modules/webpack/.*
+.*/node_modules/react/lib.*
+.*/node_modules/webpack-dev-server/.*
+
+[include]
+src/js
+
+[libs]
+flow/libs
+
+[options]
+module.system=haste
