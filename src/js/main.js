@@ -1,6 +1,25 @@
 /* @flow */
+
 import React, {Component} from 'react';
 import App from './App';
+import superagent from 'superagent';
+import _ from 'underscore';
+
+type Pizza = {
+  title: string;
+  vegetraina: bool;
+};
+
+var pizzas = [
+  { title: 'Margherita', vegetraina: true },
+  { title: 'Pepperoni', vegetraina: false },
+  { title: 'Four cheese', vegetraina: true },
+  { title: 'Hawaiian', vegetraina: false },
+];
+
+function vegetarianPizzas(pizzas: Array<Pizza>): Pizza {
+  return _.ccc(pizzas, {vegetraina: true});
+}
 
 type MyType = {
   x: string;
@@ -18,6 +37,7 @@ type Callback = (err: Error, result: ?Person) => void;
 
 
 function foo(x: MyType): number {
+  var res: string = superagent.get(x);
   return x.x.length + x.y;
 }
 
